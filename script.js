@@ -21,6 +21,7 @@ const modalImage = document.querySelector('.modal-image');
 const modal = document.querySelector('.modal');
 const close = document.querySelectorAll('.close');
 const text = document.querySelector('.archive-item-text');
+const paragraph = modalImage.querySelector('p');
 
 
 for(let button of buttons) {
@@ -29,7 +30,11 @@ for(let button of buttons) {
     modalImage.style.backgroundImage = `url(${source})`;
     modal.classList.add('show');
     modalImage.classList.add('show');
-    text.classList.add('show')
+    text.classList.add('show');
+    const para = e.target.parentElement.childNodes[5].textContent;
+    paragraph.textContent = para;
+    paragraph.classList.add('invisible')
+    console.dir(e)
    
   }
   )
